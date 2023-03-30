@@ -8,7 +8,7 @@ net: backbone network (if you want to use other networks)
 
 gpu: index of gpu you'd like to use
 
-sch: scheduler (specify gamma value when you use exp)
+sch: scheduler (specify gamma (eta_min) value when you use exp(cos) scheduler)
 
 epoch: the number of epochs
 
