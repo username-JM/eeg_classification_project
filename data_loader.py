@@ -13,10 +13,10 @@ class CustomDataset(Dataset):
     def load_data(self):
         s = self.args.train_subject[0]
         if self.args.phase == 'train':
-            self.X = np.load(f"./data/S{s:02}_X_train.npy")
-            self.y = np.load(f"./data/S{s:02}_y_train.npy")
+            self.X = np.load(f"./data/S{s:02}_train_X.npy")
+            self.y = np.load(f"./data/S{s:02}_train_y.npy")
         else:
-            self.X = np.load(f"./data/S{s:02}_X_test.npy")
+            self.X = np.load(f"./data/S{s:02}_test_X.npy")
             self.y = np.load(f"./answer/S{s:02}_y_test.npy")
         if len(self.X.shape) <= 3:
             self.X = np.expand_dims(self.X, axis=1)
