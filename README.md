@@ -49,3 +49,17 @@ args.json contains information of arguments for the experiment.
 The experimental results including train loss/acc, test(val) loss/acc will be saved in "log_dict.json"
 
 The parameters of trained model will be saved in "./checkpoint". 
+
+
+
+# Notice (23.04.30)
+
+제가 올린 pretrained parameters는 타겟 실험자를 제외한 8명의 실험자의 session 1,2데이터를 모두 사용해 학습한 파라미터입니다. 
+
+즉, train_X, test_X 를 모두 사용하여 학습한 것입니다.
+
+이후 타겟 실험자로 fine-tuning할 때는 session 1 (train_X)만을 사용하여 학습을 하고 이후 session 2 (test_X)로 evaluation하시면 됩니다.
+
+코드에서 test data를 val로 할당하여 혼동을 드린 것 같습니다.
+
+validation set은 따로 제공되지 않으며 직접 train dataset에서 정의하시면 됩니다.
